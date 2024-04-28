@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page principale</title>
+</head>
+<body>
+    <form id="webhookForm">
+        <label for="userID">ID de la personne :</label>
+        <input type="text" id="userID" name="userID"><br><br>
+        <label for="webhookURL">Webhook Discord :</label>
+        <input type="text" id="webhookURL" name="webhookURL"><br><br>
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <script>
+        document.getElementById("webhookForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêcher le rechargement de la page
+
+            var userID = document.getElementById("userID").value;
+            var webhookURL = document.getElementById("webhookURL").value;
+
+            // Stocker les informations localement ou dans une base de données (pas inclus dans cet exemple)
+            // Exemple de stockage local
+            localStorage.setItem(userID, webhookURL);
+
+            // Rediriger vers la page secondaire avec l'ID de la personne comme paramètre d'URL
+            window.location.href = "dudecord.html?userID=" + userID;
+        });
+    </script>
+</body>
+</html>
