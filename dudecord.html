@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Secondaire</title>
+</head>
+<body>
+    <h1>Informations de la personne avec l'ID : <span id="userID"></span></h1>
+    <p>Webhook Discord : <span id="webhookURL"></span></p>
+    
+    <script>
+        window.onload = function() {
+            // Extraire l'ID de l'URL
+            var params = new URLSearchParams(window.location.search);
+            var userID = params.get('userID');
+
+            // Récupérer les informations stockées pour cet ID
+            var webhookURL = localStorage.getItem(userID);
+
+            // Afficher les informations sur la page
+            document.getElementById('userID').textContent = userID;
+            document.getElementById('webhookURL').textContent = webhookURL;
+        };
+        window.onload = function() {
+    window.location.replace("about:blank");
+};
+    </script>
+</body>
+</html>
